@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/fonts/TsukimiRounded/stylesheet.css">
+    <link rel="stylesheet" href="./css/head-slider/swiper.min.css">
+    <link rel="stylesheet" href="./css/head-slider/style.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>KinoGit</title>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <div class="head__col1">
+                <a href="./index.html"><h1 class="head__col1__logo">KinoGit</h1></a>
+            </div>
+
+            <div class="head__col2">
+                <div class="search__cont">
+                    <input type="search" placeholder="Search" id="search_inp" class="searchInp">
+                    <img class="search__img" id="search_btn" src="./assets/svg/search.svg" alt="icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="head__bottom__slider">
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper"></div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Swiper buttons -->
+                <div class="swiper-button-prev-unique"><span class="cursor-prev"></span></div>
+                <div class="swiper-button-next-unique"><span class="cursor-next"></span></div>
+            </div>
+        </div>
+    </header>
+
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Overlay content -->
+        <div class="overlay-content" id="overlay-content"></div>
+
+        <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a>
+
+        <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow">&#8658;</a>
+
+    </div>
+
+    <main>
+        <section class="main__section" id="main">
+
+        </section>
+
+        <nav>
+            <div class="categories" id="categories"></div>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="pagination">
+            <div class="page" id="prev"><</div>
+            <div class="current" id="current">1</div>
+            <div class="page" id="next">></div>
+        </div>
+    </footer>
+
+    <script src="./js/swiper/swiper.min.js"></script>
+    <script src="./js/swiper/swiper-cnfigs.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
