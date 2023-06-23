@@ -4,76 +4,587 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/fonts/TsukimiRounded/stylesheet.css">
-    <link rel="stylesheet" href="./css/head-slider/swiper.min.css">
-    <link rel="stylesheet" href="./css/head-slider/style.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/helper/helper.css">
+    <link rel="stylesheet" href="./css/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/swiper/swiperStyles.css">
+    <link rel="stylesheet" href="./css/main/main.css">
     <title>KinoGit</title>
 </head>
 
 <body>
-    <header>
-        <div class="head">
-            <div class="head__col1">
-                <a href="./index.html"><h1 class="head__col1__logo">KinoGit</h1></a>
+    <div class="parent">
+        <header>
+            <!-- head swiper container-->
+            <div class="head-top-cont">
+                <h1 class="logo">Kino<span>Git</span></h1>
+                <nav class="head-top-nav">
+                    <a href="#" class="head-top-nav-items">топ <span id="FullYear">2010</span></a>
+                    <a href="#" class="head-top-nav-items">Новинки</a>
+                    <a href="#" class="head-top-nav-items">Премьеры</a>
+                    <a href="#" class="head-top-nav-items">Случайный</a>
+                    <a href="#" class="head-top-nav-items"></a>
+
+                    <div class="search" id="search">
+                        <input class="search-inp" id="search-inp" type="text">
+                        <span class="search-close" id="search-close"></span>
+                    </div>
+                </nav>
             </div>
 
-            <div class="head__col2">
-                <div class="search__cont">
-                    <input type="search" placeholder="Search" id="search_inp" class="searchInp">
-                    <img class="search__img" id="search_btn" src="./assets/svg/search.svg" alt="icon">
+            <div class="swiper-container head-swiper-container">
+                <div class="swiper-wrapper head-swiper-wrapper" id="head-swiper-wrapper">
+
+                    <!-- <div class="swiper-slide head-swiper-slide" style="background-image:url(./assets/img/test/01.jpg)">
+                        <span class="head-slide-reyting">9.5</span>
+                        <div class="head-info">
+                            <h4 class="head-info-title">title</h4>
+                        </div>
+                    </div> -->
+
                 </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination head-swiper-pagination"></div>
+                <!-- <div class="swiper-pagination head-swiper-pagination"></div> -->
+
+                <script>
+                    function headSwiper() {
+                        const head_swiper_wrapper = document.querySelector('.head-swiper-wrapper')
+
+                        let swiper = new Swiper('.head-swiper-container', {
+                            effect: 'coverflow',
+                            speed: 700,
+                            grabCursor: true,
+                            centeredSlides: true,
+                            slidesPerView: 'auto',
+                            coverflowEffect: {
+                                depth: 40,
+                                modifier: 5,
+                                rotate: 0,
+                                // scale:1.1,
+                                slideShadows: true,
+                                stretch: -10,
+                            },
+                            pagination: {
+                                el: '.swiper-pagination',
+                                clickable: true,
+                            },
+                            autoplay: {
+                                delay: 2000,
+                            },
+                            on: {
+                                // -------- touch & move--------
+                                // sliderMove: function () {
+                                //     setTimeout(() => {
+                                //         document.querySelector('header').style.backgroundImage = head_swiper_wrapper.querySelector('.swiper-slide-active').style.backgroundImage
+                                //     }, 150)
+                                // },
+
+                                // -------- if buttones activete run this--------
+                                // slideChange: function () {
+                                //     setTimeout(() => {
+                                //         document.querySelector('header').style.backgroundImage = head_swiper_wrapper.querySelector('.swiper-slide-active').style.backgroundImage
+                                //     }, 350)
+                                // }
+                            }
+                        })
+
+                        // -------- get (click) head slider element --------
+
+                        // head_swiper_wrapper.addEventListener('click', () => {
+                        //     console.log(swiper.clickedSlide);
+                        // })
+                    }
+                </script>
             </div>
-        </div>
+            <div class="head-bottom-shadow"></div>
+        </header>
 
-        <div class="head__bottom__slider">
-            <!-- Swiper -->
-            <div class="swiper-container">
-                <div class="swiper-wrapper"></div>
-                <!-- Swiper Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Swiper buttons -->
-                <div class="swiper-button-prev-unique"><span class="cursor-prev"></span></div>
-                <div class="swiper-button-next-unique"><span class="cursor-next"></span></div>
-            </div>
-        </div>
-    </header>
+        <main>
+            <!----- High rated films ----->
+            <section class="sections high-rated-films">
+                <div class="sections-title-cont">
+                    <h2>Фильмы с высоким рейтингом</h2>
+                </div>
+                <!----- swiper slider ----->
+                <div class="swiper-container sections-sliders-container" id="high-rated-slider-container">
+                    <div class="swiper-wrapper sections-sliders-wrapper" id="high-rated-films">
 
-    <div id="myNav" class="overlay">
+                        <!-- <div class="swiper-slide sections-sliders">
+                                <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/01.jpg)">
+                                    <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg" alt="">
+                                </div>
 
-        <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                <span class="sections-sliders-reyting">9.5</span>
+                                
+                                <div class="sections-sliders-info">
+                                    <h4 class="sections-sliders-info-title">title from films</h4>
+                                    <span class="sections-sliders-info-data">2023</span>
+                                </div>
+                        </div> -->
 
-        <!-- Overlay content -->
-        <div class="overlay-content" id="overlay-content"></div>
+                    </div>
+                </div>
+            </section>
 
-        <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a>
 
-        <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow">&#8658;</a>
+            <!------ Modern cartoons ----->
+            <section class="sections best-cartoons">
+                <div class="sections-title-cont">
+                    <h2>современные мультфильмы</h2>
+                </div>
+                <!----- swiper slider ----->
+                <div class="swiper-container sections-sliders-container" id="high-rated-slider-container">
+                    <div class="swiper-wrapper sections-sliders-wrapper">
 
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/01.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/02.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/03.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/04.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!------- best serials ------->
+            <section class="sections best-serials">
+                <div class="sections-title-cont">
+                    <h2>лучшие сериалы</h2>
+                </div>
+                <!----- swiper slider ----->
+                <div class="swiper-container sections-sliders-container" id="high-rated-slider-container">
+                    <div class="swiper-wrapper sections-sliders-wrapper">
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/01.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/02.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/03.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/04.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!------- best militant ------>
+            <section class="sections best-militant">
+                <div class="sections-title-cont">
+                    <h2>лучший боевик</h2>
+                </div>
+                <!----- swiper slider ----->
+                <div class="swiper-container sections-sliders-container" id="high-rated-slider-container">
+                    <div class="swiper-wrapper sections-sliders-wrapper">
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/01.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/02.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/03.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/04.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!------- best comedies ------>
+            <section class="sections best-comedies">
+                <div class="sections-title-cont">
+                    <h2>лучшие комедии</h2>
+                </div>
+                <!----- swiper slider ----->
+                <div class="swiper-container sections-sliders-container" id="high-rated-slider-container">
+                    <div class="swiper-wrapper sections-sliders-wrapper">
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/01.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/02.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/03.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/04.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!------ romantic cinema ----->
+            <section class="sections romantic-cinema">
+                <div class="sections-title-cont">
+                    <h2>романтическое кино</h2>
+                </div>
+                <!----- swiper slider ----->
+                <div class="swiper-container sections-sliders-container" id="high-rated-slider-container">
+                    <div class="swiper-wrapper sections-sliders-wrapper">
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/01.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/02.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/03.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/04.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-------- Adventures -------->
+            <section class="sections Adventures">
+                <div class="sections-title-cont">
+                    <h2>Приключения</h2>
+                </div>
+                <!----- swiper slider ----->
+                <div class="swiper-container sections-sliders-container" id="high-rated-slider-container">
+                    <div class="swiper-wrapper sections-sliders-wrapper">
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/01.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/02.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/03.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/04.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!----------- Drama ---------->
+            <section class="sections drama">
+                <div class="sections-title-cont">
+                    <h2>драма</h2>
+                </div>
+                <!----- swiper slider ----->
+                <div class="swiper-container sections-sliders-container" id="high-rated-slider-container">
+                    <div class="swiper-wrapper sections-sliders-wrapper">
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/01.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/02.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/03.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide sections-sliders">
+                            <div class="sections-sliders-BG-img" style="background-image:url(./assets/img/test/04.jpg)">
+                                <img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg"
+                                    alt="">
+                            </div>
+                            <span class="sections-sliders-reyting">9.5</span>
+                            <div class="sections-sliders-info">
+                                <h4 class="sections-sliders-info-title">title from films</h4>
+                                <span class="sections-sliders-info-data">2023</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!----- swiper configs ----->
+        <script>
+            function high_rated_slider() {
+                let swipers = new Swiper('#high-rated-slider-container', {
+                    effect: 'slider',
+                    speed: 700,
+                    slidesPerView: 'auto',
+                    spaceBetween: 10,
+                    grabCursor: true,
+                    autoplay: {
+                        delay: 4000,
+                    },
+                })
+            }
+        </script>
+
+        <!-- footer -->
+        <footer>
+        </footer>
     </div>
-
-    <main>
-        <section class="main__section" id="main">
-
-        </section>
-
-        <nav>
-            <div class="categories" id="categories"></div>
-        </nav>
-    </main>
-
-    <footer>
-        <div class="pagination">
-            <div class="page" id="prev"><</div>
-            <div class="current" id="current">1</div>
-            <div class="page" id="next">></div>
-        </div>
-    </footer>
-
-    <script src="./js/swiper/swiper.min.js"></script>
-    <script src="./js/swiper/swiper-cnfigs.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./js/getApis/getApi.js"></script>
+    <script src="./js/searchAnim/searchAnim.js"></script>
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/main/main.js"></script>
 </body>
 
 </html>
