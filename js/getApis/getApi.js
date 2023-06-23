@@ -33,7 +33,12 @@ getMoviesPopular().then(r => {
 		div.className = 'swiper-slide head-swiper-slide'
 		div.style = `background-image:url(https://image.tmdb.org/t/p/w500/${el.poster_path})`
 		div.innerHTML = `
+					<div class="head-swiper-wrapper-play-img-cont">
+						<img src="./assets/svg/play-button.svg" alt="play-button">
+					</div>
+
 					<span class="head-slide-reyting">${el.vote_average}</span>
+					
 					<div class="head-info">
 						<h4 class="head-info-title">${el.title}</h4>
 					</div>`
@@ -104,19 +109,3 @@ main_films().then((r) => {
 // 	})
 // 	main_films_sliderConf()
 // })
-
-
-function test(page=1,limit=30) {
-	return fetch(`https://kinopoiskapiunofficial.tech/api/v2.2/films?selectFields&page=${page}&limit=${limit=30}`, {
-		method: 'GET',
-		headers: {
-			'X-API-KEY': 'addf2e7e-78cc-4d22-86aa-b0252044c917',
-			'Content-Type': 'application/json',
-		},
-	})
-		.then(r => r.json())
-}
-//slider 2 High rated films
-test().then((r) => {
-	console.log(r);
-})

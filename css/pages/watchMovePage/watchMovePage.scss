@@ -306,196 +306,55 @@ header {
     }
 }
 
-
-
-// from 'main' all sections
-
 main {
-    width: 100%;
-    padding-top: 30px;
+    padding-top: 80px;
+    height: 1800px;
 }
 
-.sections {
-    background-position: center;
-    background-size: contain;
-    padding-top: 60px;
-}
-
-.sections-title-cont {
-    position: relative;
-    text-align: center;
-    width: 480px;
-    padding: 5px 55px 7px;
-    clip-path: polygon(0 1%, 85% 0, 100% 100%, 15% 100%);
-    box-shadow: 0 0 20px 3px $colororange;
-    border: 1px solid $colororange;
-    animation: sections-title-cont 2s linear infinite;
-    cursor: pointer;
-
-    @keyframes sections-title-cont {
-        0% {
-            filter: drop-shadow(0 0 0 $colororange);
-            box-shadow: 0 0 0 0 $colororange;
-        }
-
-        5% {
-            filter: drop-shadow(0px 0px 10px $colororange);
-            box-shadow: 0 0 40px 10px $colororange;
-        }
-
-        50% {
-            filter: drop-shadow(0px 0px 1px $colororange);
-            box-shadow: 0 0 5px 2px $colororange;
-        }
-
-        100% {
-            filter: drop-shadow(0px 0px 1px $colororange);
-            box-shadow: 0 0 5px 2px $colororange;
-        }
-    }
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: 22px;
-        height: 100%;
-        width: 2px;
-        background-color: $colororange;
-        filter: drop-shadow(0px 0px 1px $colororange);
-        transform: rotate(124deg);
-        transition: 350ms;
-        opacity: 0;
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 10px;
-        right: 22px;
-        height: 100%;
-        width: 2px;
-        background-color: $colororange;
-        filter: drop-shadow(0px 0px 1px $colororange);
-        transform: rotate(124deg);
-        transition: 350ms;
-        opacity: 0;
-    }
-
-    &:hover {
-        filter: drop-shadow(0px 0px 10px $colororange) !important;
-        box-shadow: 0 0 40px 10px $colororange !important;
-    }
-
-    &:hover.sections-title-cont::before {
-        top: 0;
-        left: 35px;
-        opacity: 1;
-    }
-
-    &:hover.sections-title-cont::after {
-        top: 0;
-        right: 35px;
-        opacity: 1;
-    }
-
-    &:active {
-        background-color: rgba(255, 0, 0, 0.082);
-    }
-}
-
-.sections-sliders-container {
-    padding: 25px 20px 110px;
-}
-
-.sections-sliders {
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    width: 250px;
-    height: 350px;
-    transition: 200ms;
-    filter: drop-shadow(2px 4px 6px $colorBlack);
-
-    &:active {
-        transform: scale(0.98);
-    }
-
-    &:hover .sections-sliders-BG-img::after {
-        background-color: #00000076;
-    }
-
-    &:hover .sections-sliders-watch-now-button {
-        opacity: 1;
-        transform: scale(1.0);
-    }
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.sections-sliders-BG-img {
+.movie-description {
+    width: 80%;
+    max-width: 890px;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-position: center;
-    background-size: cover;
-    width: 250px;
-    height: 350px;
-    clip-path: polygon(0 1%, 85% 0, 100% 100%, 15% 100%);
+}
 
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        transition: 350ms;
+.movie-description-left-cont {
+    width: 50%;
+    padding: 0 30px;
+}
+
+.movie-description-left-img-cont {
+    display: flex;
+    justify-content: center;
+
+    img {
+        max-width: 385px;
+        border-radius: 10px;
+        filter: drop-shadow(0 0 20px $colorBlack);
     }
 }
 
-.sections-sliders-watch-now-button {
-    opacity: 0;
-    width: 60px;
-    height: 60px;
-    z-index: 100;
-    border-radius: 100%;
-    transition: 350ms;
-    transform: scale(.60);
-}
-
-.sections-sliders-reyting {
-    position: absolute;
-    right: 15px;
-    top: 0px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 350ms;
-    clip-path: polygon(0 1%, 85% 0, 100% 100%, 15% 100%);
-    background-color: $colororange;
+.movie-description-right-cont {
+    width: 50%;
+    max-width: 450px;
+    padding: 0 30px;
     color: $colorWhite;
-    font-weight: 400;
+    padding-top: 20px;
 }
 
-.sections-sliders-info {
-    margin-top: 15px;
-    width: 100%;
-    padding-left: 5px;
-    text-transform: capitalize;
-    word-break: break-word;
+.movie-description-right-title {
+    font-size: 35px;
+    margin-bottom: 20px;
 }
 
-.sections-sliders-info-title {
-    transition: 350ms;
-    color: $colororange;
-    margin-bottom: 10px;
+.movie-description-right-duration,
+.movie-description-right-reyting,
+.movie-description-right-release-date,
+.movie-description-right-genre {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
-.sections-sliders-info-data {}
+.movie-description-right-overview {}

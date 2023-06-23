@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/helper/helper.css">
     <link rel="stylesheet" href="./css/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/swiper/swiperStyles.css">
-    <link rel="stylesheet" href="./css/main/main.css">
+    <link rel="stylesheet" href="./css/pages/watchMovePage/watchMovePage.css">
     <title>KinoGit</title>
 </head>
 
@@ -35,6 +35,9 @@
                 <div class="swiper-wrapper head-swiper-wrapper" id="head-swiper-wrapper">
 
                     <!-- <div class="swiper-slide head-swiper-slide" style="background-image:url(./assets/img/test/01.jpg)">
+                        <div class="head-swiper-wrapper-play-img-cont">
+                            <img src="./assets/svg/play-button.svg" alt="play-button">
+                        </div>
                         <span class="head-slide-reyting">9.5</span>
                         <div class="head-info">
                             <h4 class="head-info-title">title</h4>
@@ -53,7 +56,6 @@
                         let swiper = new Swiper('.head-swiper-container', {
                             effect: 'coverflow',
                             speed: 700,
-                            grabCursor: true,
                             centeredSlides: true,
                             slidesPerView: 'auto',
                             coverflowEffect: {
@@ -100,13 +102,52 @@
         </header>
 
         <main>
-            
+
+            <div class="movie-description">
+                <div class="movie-description-left-cont">
+                    <div class="movie-description-left-img-cont">
+                        <img src="./assets/img/kino_poster.jpg" alt="film-img">
+                    </div>
+                </div>
+
+                <div class="movie-description-right-cont">
+
+                    <h1 class="movie-description-right-title">Extraction 2</h1>
+
+                    <div class="movie-description-right-release-date">
+                        <span>год</span>
+                        <span>2023-06-09</span>
+                    </div>
+
+                    <div class="movie-description-right-genre">
+                        <span>жанр</span>
+                        <span>боевик, криминал</span>
+                    </div>
+
+                    <div class="movie-description-right-duration">
+                        <span>время</span><span>2 часа 02 мин</span>
+                    </div>
+
+                    <div class="movie-description-right-reyting">
+                        <span>Рейтинг фильма 8.5</span><span>********</span>
+                    </div>
+                    <div class="movie-description-right-overview">
+                        <p>Про фильм</p>
+                        Tasked with extracting a family who is at the mercy of a Georgian gangster, Tyler Rake
+                        infiltrates one of the world's deadliest prisons in order to save them. But when the
+                        extraction gets hot, and the gangster dies in the heat of battle, his equally ruthless
+                        brother tracks down Rake and his team to Sydney, in order to get revenge.
+                    </div>
+
+                </div>
+            </div>
+
         </main>
 
         <footer>
         </footer>
     </div>
-    <script src="./js/getApis/getApi.js"></script>
+    <script src="./js/pages/watchMovePage-api.js"></script>
     <script src="./js/searchAnim/searchAnim.js"></script>
     <script src="./js/swiper/swiper-bundle.min.js"></script>
     <script src="./js/main/main.js"></script>
