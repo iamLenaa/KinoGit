@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/helper/helper.css">
+    <link rel="stylesheet" href="./css/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/swiper/swiperStyles.css">
+    <link rel="stylesheet" href="./css/main/main.css">
+    <title>KinoGit</title>
+</head>
+
+<body>
+    <div class="parent">
+        <header>
+            <!-- head swiper container-->
+            <div class="head-top-cont">
+                <h1 class="logo">Kino<span>Git</span></h1>
+                <nav class="head-top-nav">
+                    <a href="#" class="head-top-nav-items">топ <span id="FullYear">2010</span></a>
+                    <a href="#" class="head-top-nav-items">Новинки</a>
+                    <a href="#" class="head-top-nav-items">Премьеры</a>
+                    <a href="#" class="head-top-nav-items">Случайный</a>
+                    <a href="#" class="head-top-nav-items"></a>
+
+                    <div class="search" id="search">
+                        <input class="search-inp" id="search-inp" type="text">
+                        <span class="search-close" id="search-close"></span>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="swiper-container head-swiper-container">
+                <div class="swiper-wrapper head-swiper-wrapper" id="head-swiper-wrapper">
+
+                    <!-- <div class="swiper-slide head-swiper-slide" style="background-image:url(./assets/img/test/01.jpg)">
+                        <span class="head-slide-reyting">9.5</span>
+                        <div class="head-info">
+                            <h4 class="head-info-title">title</h4>
+                        </div>
+                    </div> -->
+
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination head-swiper-pagination"></div>
+                <!-- <div class="swiper-pagination head-swiper-pagination"></div> -->
+
+                <script>
+                    function headSwiper() {
+                        const head_swiper_wrapper = document.querySelector('.head-swiper-wrapper')
+
+                        let swiper = new Swiper('.head-swiper-container', {
+                            effect: 'coverflow',
+                            speed: 700,
+                            grabCursor: true,
+                            centeredSlides: true,
+                            slidesPerView: 'auto',
+                            coverflowEffect: {
+                                depth: 40,
+                                modifier: 5,
+                                rotate: 0,
+                                // scale:1.1,
+                                slideShadows: true,
+                                stretch: -10,
+                            },
+                            pagination: {
+                                el: '.swiper-pagination',
+                                clickable: true,
+                            },
+                            autoplay: {
+                                delay: 2000,
+                            },
+                            on: {
+                                // -------- touch & move--------
+                                // sliderMove: function () {
+                                //     setTimeout(() => {
+                                //         document.querySelector('header').style.backgroundImage = head_swiper_wrapper.querySelector('.swiper-slide-active').style.backgroundImage
+                                //     }, 150)
+                                // },
+
+                                // -------- if buttones activete run this--------
+                                // slideChange: function () {
+                                //     setTimeout(() => {
+                                //         document.querySelector('header').style.backgroundImage = head_swiper_wrapper.querySelector('.swiper-slide-active').style.backgroundImage
+                                //     }, 350)
+                                // }
+                            }
+                        })
+
+                        // -------- get (click) head slider element --------
+
+                        // head_swiper_wrapper.addEventListener('click', () => {
+                        //     console.log(swiper.clickedSlide);
+                        // })
+                    }
+                </script>
+            </div>
+            <div class="head-bottom-shadow"></div>
+        </header>
+
+        <main>
+            
+        </main>
+
+        <footer>
+        </footer>
+    </div>
+    <script src="./js/getApis/getApi.js"></script>
+    <script src="./js/searchAnim/searchAnim.js"></script>
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/main/main.js"></script>
+</body>
+
+</html>

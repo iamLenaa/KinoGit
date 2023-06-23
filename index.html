@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/helper/helper.css">
     <link rel="stylesheet" href="./css/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/swiper/swiperStyles.css">
-    <link rel="stylesheet" href="./css/main/main.css">
+    <link rel="stylesheet" href="./css/pages/main/main.css">
     <title>KinoGit</title>
 </head>
 
@@ -559,25 +559,24 @@
                     </div>
                 </div>
             </section>
+
+            <!----- swiper configs ----->
+            <script>
+                function high_rated_slider() {
+                    let swipers = new Swiper('#high-rated-slider-container', {
+                        effect: 'slider',
+                        speed: 700,
+                        slidesPerView: 'auto',
+                        spaceBetween: 10,
+                        grabCursor: true,
+                        autoplay: {
+                            delay: 4000,
+                        },
+                    })
+                }
+            </script>
         </main>
 
-        <!----- swiper configs ----->
-        <script>
-            function high_rated_slider() {
-                let swipers = new Swiper('#high-rated-slider-container', {
-                    effect: 'slider',
-                    speed: 700,
-                    slidesPerView: 'auto',
-                    spaceBetween: 10,
-                    grabCursor: true,
-                    autoplay: {
-                        delay: 4000,
-                    },
-                })
-            }
-        </script>
-
-        <!-- footer -->
         <footer>
         </footer>
     </div>

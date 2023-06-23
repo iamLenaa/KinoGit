@@ -45,9 +45,9 @@ getMoviesPopular().then(r => {
 });
 
 // //___________________________________________________________________________________________________________________________
-function main_films(min_rating = 8.5, max_rating = 100, min_year = thisYear - 5, max_year = thisYear, page = 1) {
+function main_films(min_rating = 8, max_rating = 100, min_year = thisYear - 5, max_year = thisYear, page = 1) {
 
-	return fetch(`https://kinopoiskapiunofficial.tech/api/v2.2/films?order=RATING&type=FILM&ratingFrom=${min_rating = 8}&ratingTo=${max_rating = 100}&yearFrom=${min_year}&yearTo=${max_year}&page=${page}`, {
+	return fetch(`https://kinopoiskapiunofficial.tech/api/v2.2/films?order=RATING&type=FILM&ratingFrom=${min_rating}&ratingTo=${max_rating}&yearFrom=${min_year}&yearTo=${max_year}&page=${page}`, {
 		method: 'GET',
 		headers: {
 			'X-API-KEY': 'addf2e7e-78cc-4d22-86aa-b0252044c917',
@@ -59,7 +59,6 @@ function main_films(min_rating = 8.5, max_rating = 100, min_year = thisYear - 5,
 //slider 2 High rated films
 main_films().then((r) => {
 	let films = r.items
-	console.log(films);
 	const slider_2_wrapper = document.getElementById('high-rated-films')
 
 	films.forEach(film => {
@@ -105,3 +104,19 @@ main_films().then((r) => {
 // 	})
 // 	main_films_sliderConf()
 // })
+
+
+function test(page=1,limit=30) {
+	return fetch(`https://kinopoiskapiunofficial.tech/api/v2.2/films?selectFields&page=${page}&limit=${limit=30}`, {
+		method: 'GET',
+		headers: {
+			'X-API-KEY': 'addf2e7e-78cc-4d22-86aa-b0252044c917',
+			'Content-Type': 'application/json',
+		},
+	})
+		.then(r => r.json())
+}
+//slider 2 High rated films
+test().then((r) => {
+	console.log(r);
+})

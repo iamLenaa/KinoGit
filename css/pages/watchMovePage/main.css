@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.colorGreen {
+  color: #098132;
+}
+
+.colorOrange {
+  color: #FF9800;
+}
+
+.colorRed {
+  color: #ff0000;
+}
+
+.parent {
+  max-width: 2560px;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  background-color: #01000c;
+  color: #000000;
+}
+
+header {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../../assets/img/bg_img4.jpg);
+  width: 100%;
+  height: 87vh;
+  padding-bottom: 15px;
+  max-height: 640px;
+  min-height: 600px;
+}
+
+.head-bottom-shadow {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px 0px 10px 15px #000000, 0px -30px 45px 20px #000000, 0px 30px 45px 45px #000000;
+}
+
+.head-top-cont {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5019607843);
+  padding: 10px 50px;
+  z-index: 50;
+}
+
+.logo {
+  transition: 350ms;
+  animation: blur 1s ease-out infinite;
+  text-shadow: 0px 0px 5px #ffffff;
+  cursor: pointer;
+}
+.logo:hover {
+  text-shadow: 0px 0px 30px #d10000;
+}
+@keyframes blur {
+  from {
+    text-shadow: 0px 0px 10px #ffffff, 0px 0px 25px #ffffff;
+  }
+}
+
+.head-top-nav {
+  display: flex;
+  align-items: center;
+}
+
+.head-top-nav-items {
+  text-transform: capitalize;
+  margin: 0 5px;
+  transition: all 250ms;
+  color: #ffffff;
+  cursor: pointer;
+}
+.head-top-nav-items:hover {
+  color: #d10000;
+  filter: drop-shadow(0px 0px 1px);
+}
+
+.search {
+  position: relative;
+  border-radius: 25px;
+  border: 2px solid #ffffff;
+  width: 24px;
+  height: 24px;
+  transition: 450ms;
+  transform: scale(0.8);
+}
+
+.search-close {
+  position: absolute;
+  right: 0;
+  width: 25px;
+  height: 100%;
+  cursor: pointer;
+}
+.search-close::before {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  right: -3px;
+  width: 0;
+  height: 10px;
+  border: 1px solid #ffffff;
+  transform: rotate(-45deg);
+  transition: 250ms;
+  cursor: pointer;
+}
+.search-close::after {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  right: 0px;
+  width: 0;
+  height: 10px;
+  border: 1px solid #ffffff;
+  transform: rotate(45deg);
+  transition: 550ms;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.search-anime-inp {
+  width: 170px;
+  height: 27px;
+  border-radius: 8px;
+  padding-left: 5px;
+  transform: scale(1);
+}
+
+.search-anime-close {
+  width: 21px;
+  height: 100%;
+}
+.search-anime-close::before {
+  bottom: 5px;
+  right: 10px;
+}
+.search-anime-close::after {
+  opacity: 1;
+  bottom: 5px;
+  right: 9px;
+}
+
+.search-inp {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+}
+
+.head-swiper-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.head-swiper-wrapper {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 100px;
+}
+
+.head-swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 239px;
+  height: 365px;
+  box-shadow: 0 0 20px 3px colorBlack;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.head-swiper-slide:hover {
+  z-index: 1000;
+}
+
+.head-info {
+  position: absolute;
+  bottom: 0;
+  padding: 4px 0;
+  width: 100%;
+  word-break: break-word;
+}
+.head-info:hover {
+  filter: drop-shadow(0px 0px 1px);
+}
+
+.head-slide-reyting {
+  position: absolute;
+  width: 27px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7843137255);
+  color: #d10000;
+  top: 4px;
+  right: 4px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid #d10000;
+}
+
+.head-info-title {
+  display: none;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.head-swiper-pagination {
+  height: 30px;
+  bottom: 0;
+}
+.head-swiper-pagination-bullet {
+  background: #ffffff;
+  opacity: 0.4;
+}
+.head-swiper-pagination-bullet-active {
+  background: #ffffff;
+  opacity: 1;
+  transform: scale(1.7);
+}
+.head-swiper-pagination .swiper-pagination-bullet {
+  border-radius: 0;
+  width: 6px;
+  height: 10px;
+  background-color: #ffffff;
+}
+.head-swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #d10000;
+}
+.head-swiper-pagination .swiper-pagination-bullet-active {
+  transform: scale(1.4);
+  transition: 350ms;
+}/*# sourceMappingURL=main.css.map */
