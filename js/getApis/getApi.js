@@ -64,6 +64,33 @@ function main_films(min_rating = 8, max_rating = 100, min_year = thisYear - 5, m
 //slider 2 High rated films
 main_films().then((r) => {
 	let films = r.items
+	console.log(films)
+	const slider_2_wrapper = document.getElementById('high-rated-films')
+
+	films.forEach(film => {
+		// console.log(film);
+
+		const div = document.createElement('div')
+		div.className = 'swiper-slide sections-sliders'
+		div.innerHTML = `
+		<div class="sections-sliders-BG-img" style="background-image:url(${film.posterUrlPreview})">
+			<img class="sections-sliders-watch-now-button" src="./assets/svg/play-button.svg" alt="play-btn">
+		</div>
+
+		<span class="sections-sliders-reyting">${film.ratingKinopoisk}</span>
+		
+		<div class="sections-sliders-info">
+			<h4 class="sections-sliders-info-title">${film.nameRu}</h4>
+			<span class="sections-sliders-info-data">2023</span>
+		</div>`
+
+		slider_2_wrapper.appendChild(div)
+	})
+})
+
+main_films(8, 100, 2000, 2023, 2).then((r) => {
+	let films = r.items
+	console.log(films)
 	const slider_2_wrapper = document.getElementById('high-rated-films')
 
 	films.forEach(film => {
